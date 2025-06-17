@@ -1,6 +1,5 @@
 const express= require('express')
 const studentsRoutes = require('./routes/api');
-const Student = require('./Models/studentmodels');
 require('dotenv').config();
 require('./helpers/init_mongodb');
 const app = express();

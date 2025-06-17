@@ -1,19 +1,20 @@
 const express = require("express");
 const routes = express.Router();
+const studentcontroller = require("../controller/studentcontroller");
 
-const studentcontroller = require ("../Controller/studentcontroller");
 // Get a list of students from the database
-routes.get('/getStudents',studentcontroller.getAllStudents );
+routes.get('/getstudents', studentcontroller.addStudent);
 
 // Add a student to the database
-routes.post('/addStudents',studentcontroller.addStudent);
+routes.post('/addstudent', studentcontroller.addStudent);
 
-// Update a student in the database
-// routes.put('/students/:id', (req, res) => {
-//     res.send({ type: 'Update Request' });
-// });
+// // Update a student in the database
+// routes.put('/students/:id', );
 
 // Delete a student from the database
-routes.delete('/deleteStudents/:id',studentcontroller.deleteStudent);
-routes.patch('/updateStudents/:id',studentcontroller.updateStudent );
+routes.delete('/deletestudent/:id',studentcontroller.deleteStudent); 
+
+// Get a student from the database
+routes.get('/getstudent/:id', studentcontroller.getstudent);
+
 module.exports = routes;
